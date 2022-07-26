@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> <%= title %> </title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+    <!-- Font Awesome icons (free version) -->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+
+    <!-- Core theme CSS (includes Bootstrap) -->
+    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        table.scrolldown tbody, table.scrolldown thead { display: block; }
+        table.scrolldown tbody { height: 500px; overflow-y: auto; overflow-x: hidden; }
+        tbody td, thead th { width: 150px; }
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container-fluid ms-5">
+            <a class="navbar-brand text-uppercase" href="/home">Vision Optical</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fas fa-bars"></i> </button>
+            <div class="collapse navbar-collapse me-5" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/customers">Customers</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/add">Add Customer</a> </li>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/logout">Logout</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Portfolio Section -->
+    <section class="page-section portfolio mb-0" id="customers">
+        <div class="container">
+            <!-- Contact Section Heading-->
+            <h1 class="masthead-heading text-uppercase text-center text-secondary pt-5"> Customers </h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Login Section Form-->
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <form class="input-group mb-5 mt-5" method="post" action="customers">
+                        <input class="rounded-pill form-control mx-4" name="searchdata" type="search" placeholder="Search ..." aria-label="Search">
+                        <button class="btn btn-danger rounded-pill form-control-lg mx-4" type="submit">Search</button>
+                    </form>
+                    <div class="customers" id="customers">
+                        <table class="scrolldown table table-hover text-center align-middle">
+                            <thead class="border-dark">
+                                <tr>
+                                    <th>Customer Name</th>
+                                    <th>City</th>
+                                    <th>Mobile No.</th>
+                                    <th>Profile</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="border-dark border-0">
+                                <% if(data.length) { for(var i=0; i < data.length; i++) { %>
+                                    <tr>
+                                        <td>
+                                            <%= data[i].name %>
+                                        </td>
+
+                                        <td>
+                                            <%= data[i].city %>
+                                        </td>
+
+                                        <td>
+                                            <%= data[i].mobile %>
+                                        </td>
+
+                                        <td> <a href="/display/<%= data[i]._id %>">
+                                                <i class="bi bi-person-rolodex text-success"> </i>
+                                            </a>
+                                        </td>
+
+                                        <td> <a href="/edit/<%= data[i]._id %>">
+                                                <i class="bi bi-pencil text-warning"> </i>
+                                            </a>
+                                        </td>
+
+                                        <td> <a href="/delete/<%= data[i]._id %>" class="text-decoration-none">
+                                                <i class="bi bi-trash text-danger"> </i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <% } } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <p class="lead mb-0">
+                        Vision Optical, Moti Bag,
+                        <br />
+                        Junagadh.
+                    </p>
+                </div>
+
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Around the Web</h4>
+                    <a class="btn btn-outline-light btn-social mx-1"><i class="fab fa-fw fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1"><i class="fab fa-fw fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1"><i class="fab fa-fw fa-dribbble"></i></a>
+                </div>
+
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                    <p class="lead mb-0">Deep Ghodasara (DM<sup>2</sup> &nbsp;Technology)</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright Section -->
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; Your Website 2022</small>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JS -->
+    <script src="/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core theme JS -->
+    <script src="/javascripts/main.js"></script>
+
+</body>
+
+</html>

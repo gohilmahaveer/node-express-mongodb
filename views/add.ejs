@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> <%= title %> </title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+    <!-- Font Awesome icons (free version) -->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+
+    <!-- Core theme CSS (includes Bootstrap) -->
+    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container-fluid ms-5">
+            <a class="navbar-brand text-uppercase" href="/home">Vision Optical</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fas fa-bars"></i> </button>
+            <div class="collapse navbar-collapse me-5" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/customers">Customers</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/add">Add Customer</a> </li>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/logout">Logout</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Portfolio Section -->
+    <section class="page-section portfolio" id="addcustomer">
+        <div class="container-fluid mt-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-10">
+                    <!-- Portfolio Section Heading-->
+                    <h1 class="masthead-heading text-uppercase text-center text-secondary pt-5"> Add Customer </h1>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+
+                    <form name="addForm" method="post" action="addProcess">
+                        <div class="mb-3">
+                            <label for="date" class="form-label"> Date </label>
+                            <input type="date" name="date" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="customer_name" class="form-label"> Customer Name </label>
+                            <input type="text" name="name" id="name" placeholder="Enter Customer Name..." class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="city" class="form-label"> City </label>
+                            <input type="text" name="city" placeholder="Enter City Name..." class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="mobile" class="form-label"> Mobile No. </label>
+                            <input type="text" name="mobile" id="mobile" pattern="[789][0-9]{9}" placeholder="Enter Mobile Number..." class="form-control" required>
+                        </div>
+
+                        <div class="eyeprescription my-4">
+                            <table class="table table-bordered table-sm rounded align-middle" style="border-color: lightgray;">
+                                <tr>
+                                    <th style="text-align:center;" colspan="9" scope="col">Eye Prescription Details</th>
+                                </tr>
+
+                                <tr>
+                                    <th style="text-align:center ;" colspan="5" scope="col">Right Eye </th>
+                                    <th style="text-align:center ;" colspan="4" scope="col">Left Eye </th>
+                                </tr>
+
+                                <tr>
+                                    <td>&nbsp;</th>
+                                    <th>Sph </th>
+                                    <th>Cyl </th>
+                                    <th>Axis </th>
+                                    <th>VA </th>
+                                    <th>Sph </th>
+                                    <th>Cyl </th>
+                                    <th>Axis </th>
+                                    <th>VA </th>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Distant </th>
+                                    <td><input name="drsph" type="text" class="border-0 form-control"></td>
+                                    <td><input name="drcyl" type="text" class="border-0 form-control"></td>
+                                    <td><input name="draxis" type="text" class="border-0 form-control"></td>
+                                    <td><input name="drva" type="text" class="border-0 form-control"></td>
+                                    <td><input name="nrsph" type="text" class="border-0 form-control"></td>
+                                    <td><input name="nrcyl" type="text" class="border-0 form-control"></td>
+                                    <td><input name="nraxis" type="text" class="border-0 form-control"></td>
+                                    <td><input name="nrva" type="text" class="border-0 form-control"></td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Near </th>
+                                    <td><input name="dlsph" type="text" class="border-0 form-control"></td>
+                                    <td><input name="dlcyl" type="text" class="border-0 form-control"></td>
+                                    <td><input name="dlaxis" type="text" class="border-0 form-control"></td>
+                                    <td><input name="dlva" type="text" class="border-0 form-control"></td>
+                                    <td><input name="nlsph" type="text" class="border-0 form-control"></td>
+                                    <td><input name="nlcyl" type="text" class="border-0 form-control"></td>
+                                    <td><input name="nlaxis" type="text" class="border-0 form-control"></td>
+                                    <td><input name="nlva" type="text" class="border-0 form-control"></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td colspan="9">
+                                        <div class="form-group">
+                                            <label for="purpose" class="form-label fw-bold"> Purpose </label>
+                                            <input type="text" name="purpose" id="purpose" class="form-control border-top-0" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="quality" class="form-label fw-bold"> Quality </label>
+                                            <input type="text" id="quality" name="quality" class="form-control border-top-0" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="remark" class="form-label fw-bold"> Remark </label>
+                                            <input type="text" id="remark" name="remark" class="form-control border-top-0" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- multiple order form ================================= start -->
+                        <div class="mb-3">
+                            <label for="frame_name" class="form-label"> Frame Name </label>
+                            <input type="text" id="f1name" name="f1name" placeholder="Enter Frame Name..." class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="glass_name" class="form-label"> Glass Name </label>
+                            <input type="text" id="g1name" name="g1name" placeholder="Enter Glass Name..." class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="frame_price" class="form-label"> Frame Price </label>
+                            <input type="text" id="f1prise" name="f1prise" placeholder="Enter Frame Price..." class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="glass_price" class="form-label"> Glass Price </label>
+                            <input type="text" id="g1prise" name="g1prise" placeholder="Enter Glass Price..." class="form-control">
+                        </div>
+
+                        <!-- Multiple order form start -->
+
+                        <table class="table table-bordered table-sm rounded align-middle" style="border-color: lightgray;">
+                            <!-- Enable Decible Checkbox -->
+                            <tr>
+                                <th colspan="9" scope="col">
+                                    <div class="mb-2 mt-2 ms-4 form-check">
+                                        <input type="checkbox" class="form-check-input fs-6" id="enableForm">
+                                        <label class="form-check-label fs-6" for="enableForm">Enable For Multiple Order</label>
+                                    </div>
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th style="text-align:center;" colspan="9" scope="col">Multiple Order</th>
+                            </tr>
+
+                            <tr>
+                                <th style="text-align:center ;" colspan="5" scope="col">Frames </th>
+                                <th style="text-align:center ;" colspan="4" scope="col">Glasses </th>
+                            </tr>
+
+                            <tr>
+                                <th colspan="5">
+                                    <div class="mb-3">
+                                        <label for="frame_name" class="form-label"> Frame-2 Name </label>
+                                        <input type="text" name="f2name" id="f2name" placeholder="Enter Frame Name..." class="form-control">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="glass_name" class="form-label"> Glass-2 Name </label>
+                                        <input type="text" id="g2name" name="g2name" placeholder="Enter Glass Name..." class="form-control">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="frame_name" class="form-label"> Frame-3 Name </label>
+                                        <input type="text" name="f3name" id="f3name" placeholder="Enter Frame Name..." class="form-control">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="glass_name" class="form-label"> Glass-3 Name </label>
+                                        <input type="text" id="g3name" name="g3name" placeholder="Enter Glass Name..." class="form-control">
+                                    </div>
+
+                                </th>
+
+                                <th colspan="5">
+                                    <div class="mb-3">
+                                        <label for="frame_name" class="form-label"> Frame-2 Price </label>
+                                        <input type="text" name="f2prise" id="f2prise" placeholder="Enter Frame Price..." class="form-control">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="glass_name" class="form-label"> Glass-2 Price </label>
+                                        <input type="text" id="g2prise" name="g2prise" placeholder="Enter Glass Price..." class="form-control">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="frame_name" class="form-label"> Frame-3 Price </label>
+                                        <input type="text" name="f3prise" id="f3prise" placeholder="Enter Frame Price..." class="form-control">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="glass_name" class="form-label"> Glass-3 Price </label>
+                                        <input type="text" id="g3prise" name="g3prise" placeholder="Enter Glass Price..." class="form-control">
+                                    </div>
+                                </th>
+                                </th>
+
+
+                            </tr>
+                        </table>
+                        <!-- Multiple order form End -->
+
+                        <div class="mb-3">
+                            <label for="gst" class="form-label"> GST </label>
+                            <input type="text" id="gst" name="gst" placeholder="Enter GST" class="form-control" disabled>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="total" class="form-label"> Total </label>
+                            <input type="text" id="total" name="total" placeholder="Total is..." class="form-control">
+                        </div>
+
+                        <div class="input-group mb-3 mt-5">
+                            <input type="submit" value="Submit" class="btn btn-primary rounded-pill form-control mx-4">
+                            <input type="reset" value="Clear" class="btn btn-danger rounded-pill form-control mx-4">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <p class="lead mb-0">
+                        Vision Optical, Moti Bag,
+                        <br />
+                        Junagadh.
+                    </p>
+                </div>
+
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Around the Web</h4>
+                    <a class="btn btn-outline-light btn-social mx-1"><i class="fab fa-fw fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1"><i class="fab fa-fw fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1"><i class="fab fa-fw fa-dribbble"></i></a>
+                </div>
+
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                    <p class="lead mb-0">Deep Ghodasara (DM<sup>2</sup> &nbsp;Technology)</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright Section -->
+    <div class="copyright py-4 text-center text-white">
+        <div class="container">
+            <p> &copy;&nbsp; 2022 &nbsp; DM <sup>2</sup>&nbsp; Technology</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JS -->
+    <script src="/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core theme JS -->
+    <script src="/javascripts/main.js"></script>
+
+</body>
+
+</html>
