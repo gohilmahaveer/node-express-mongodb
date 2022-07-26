@@ -21,12 +21,6 @@
     <!-- Core theme CSS (includes Bootstrap) -->
     <link href="/stylesheets/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.css">
-
-    <style>
-        table.scrolldown tbody, table.scrolldown thead { display: block; }
-        table.scrolldown tbody { height: 500px; overflow-y: auto; overflow-x: hidden; }
-        tbody td, thead th { width: 150px; }
-    </style>
 </head>
 
 <body id="page-top">
@@ -51,7 +45,7 @@
 
     <!-- Portfolio Section -->
     <section class="page-section portfolio mb-0" id="customers">
-        <div class="container">
+        <div class="container-xl">
             <!-- Contact Section Heading-->
             <h1 class="masthead-heading text-uppercase text-center text-secondary pt-5"> Customers </h1>
             <!-- Icon Divider-->
@@ -61,58 +55,71 @@
                 <div class="divider-custom-line"></div>
             </div>
             <!-- Login Section Form-->
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <form class="input-group mb-5 mt-5" method="post" action="customers">
-                        <input class="rounded-pill form-control mx-4" name="searchdata" type="search" placeholder="Search ..." aria-label="Search">
-                        <button class="btn btn-danger rounded-pill form-control-lg mx-4" type="submit">Search</button>
+            <div>
+                <div class="col">
+                    <form class="input-group mb-5 mt-4" method="post" action="customers">
+                        <input class="rounded form-control mx-5" name="searchdata" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-primary rounded mx-5" type="submit">Search</button>
                     </form>
+
                     <div class="customers" id="customers">
-                        <table class="scrolldown table table-hover text-center align-middle">
-                            <thead class="border-dark">
-                                <tr>
-                                    <th>Customer Name</th>
-                                    <th>City</th>
-                                    <th>Mobile No.</th>
-                                    <th>Profile</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-                                </tr>
-                            </thead>
+                       
+                        <div class="row row-cols-lg-6 text-center fw-bold fs-4">
+                            <div class="col">
+                                Customer
+                            </div>
+                            <div class="col">
+                                City
+                            </div>
+                            <div class="col">
+                                Mobile
+                            </div>
+                            <div class="col">
+                                Profile
+                            </div>
+                            <div class="col">
+                                Edit
+                            </div>
+                            <div class="col">
+                                Delete
+                            </div>
+                        </div>
 
-                            <tbody class="border-dark border-0">
-                                <% if(data.length) { for(var i=0; i < data.length; i++) { %>
-                                    <tr>
-                                        <td>
-                                            <%= data[i].name %>
-                                        </td>
+                            <hr>
 
-                                        <td>
-                                            <%= data[i].city %>
-                                        </td>
+                        <% if(data.length) { for(var i=0; i < data.length; i++) { %>
 
-                                        <td>
-                                            <%= data[i].mobile %>
-                                        </td>
+                            <div class="row row-cols-lg-6 text-center fs-5">
+                                <div class="col">
+                                    <%= data[i].name %>
+                                </div>
+                                <div class="col">
+                                    <%= data[i].city %>
+                                </div>
+                                <div class="col">
+                                    <%= data[i].mobile %>
+                                </div>
+                                <div class="col">
+                                    <a href="/display/<%= data[i].id %>">
+                                        <i class="bi bi-person-rolodex text-success"> </i>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="/edit/<%= data[i].id %>">
+                                        <i class="bi bi-pencil text-warning"> </i>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="/delete/<%= data[i].id %>">
+                                        <i class="bi bi-trash text-danger"> </i>
+                                    </a>
+                                </div>
+                            </div>
 
-                                        <td> <a href="/display/<%= data[i]._id %>">
-                                                <i class="bi bi-person-rolodex text-success"> </i>
-                                            </a>
-                                        </td>
+                            <hr>
 
-                                        <td> <a href="/edit/<%= data[i]._id %>">
-                                                <i class="bi bi-pencil text-warning"> </i>
-                                            </a>
-                                        </td>
+                        <% } } %>
 
-                                        <td> <a href="/delete/<%= data[i]._id %>" class="text-decoration-none">
-                                                <i class="bi bi-trash text-danger"> </i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <% } } %>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
