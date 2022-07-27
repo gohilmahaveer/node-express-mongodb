@@ -89,7 +89,7 @@
 
                         <% if(data.length) { for(var i=0; i < data.length; i++) { %>
 
-                            <div class="row row-cols-lg-6 text-center fs-5">
+                            <div class="row row-cols-lg-3 text-center fs-5">
                                 <div class="col">
                                     <%= data[i].name %>
                                 </div>
@@ -98,21 +98,6 @@
                                 </div>
                                 <div class="col">
                                     <%= data[i].mobile %>
-                                </div>
-                                <div class="col">
-                                    <a href="/display/<%= data[i].id %>">
-                                        <i class="bi bi-person-rolodex text-success"> </i>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="/edit/<%= data[i].id %>">
-                                        <i class="bi bi-pencil text-warning"> </i>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="/delete/<%= data[i].id %>">
-                                        <i class="bi bi-trash text-danger"> </i>
-                                    </a>
                                 </div>
                             </div>
 

@@ -45,7 +45,7 @@
     <section class="page-section portfolio" id="addcustomer">
         <div class="container-fluid mt-4">
             <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-10">
+                <div class="col-lg-6 col-md-12">
                     <!-- Portfolio Section Heading-->
                     <h1 class="masthead-heading text-uppercase text-center text-secondary pt-5"> Add Customer </h1>
                     <!-- Icon Divider-->
@@ -56,10 +56,6 @@
                     </div>
 
                     <form name="addForm" method="post" action="addProcess">
-                        <div class="mb-3">
-                            <label for="date" class="form-label"> Date </label>
-                            <input type="date" name="date" class="form-control">
-                        </div>
 
                         <div class="mb-3">
                             <label for="customer_name" class="form-label"> Customer Name </label>
@@ -76,182 +72,13 @@
                             <input type="text" name="mobile" id="mobile" pattern="[789][0-9]{9}" placeholder="Enter Mobile Number..." class="form-control" required>
                         </div>
 
-                        <div class="eyeprescription my-4">
-                            <table class="table table-bordered table-sm rounded align-middle" style="border-color: lightgray;">
-                                <tr>
-                                    <th style="text-align:center;" colspan="9" scope="col">Eye Prescription Details</th>
-                                </tr>
-
-                                <tr>
-                                    <th style="text-align:center ;" colspan="5" scope="col">Right Eye </th>
-                                    <th style="text-align:center ;" colspan="4" scope="col">Left Eye </th>
-                                </tr>
-
-                                <tr>
-                                    <td>&nbsp;</th>
-                                    <th>Sph </th>
-                                    <th>Cyl </th>
-                                    <th>Axis </th>
-                                    <th>VA </th>
-                                    <th>Sph </th>
-                                    <th>Cyl </th>
-                                    <th>Axis </th>
-                                    <th>VA </th>
-                                </tr>
-                                
-                                <tr>
-                                    <th>Distant </th>
-                                    <td><input name="drsph" type="text" class="border-0 form-control"></td>
-                                    <td><input name="drcyl" type="text" class="border-0 form-control"></td>
-                                    <td><input name="draxis" type="text" class="border-0 form-control"></td>
-                                    <td><input name="drva" type="text" class="border-0 form-control"></td>
-                                    <td><input name="nrsph" type="text" class="border-0 form-control"></td>
-                                    <td><input name="nrcyl" type="text" class="border-0 form-control"></td>
-                                    <td><input name="nraxis" type="text" class="border-0 form-control"></td>
-                                    <td><input name="nrva" type="text" class="border-0 form-control"></td>
-                                </tr>
-                                
-                                <tr>
-                                    <th>Near </th>
-                                    <td><input name="dlsph" type="text" class="border-0 form-control"></td>
-                                    <td><input name="dlcyl" type="text" class="border-0 form-control"></td>
-                                    <td><input name="dlaxis" type="text" class="border-0 form-control"></td>
-                                    <td><input name="dlva" type="text" class="border-0 form-control"></td>
-                                    <td><input name="nlsph" type="text" class="border-0 form-control"></td>
-                                    <td><input name="nlcyl" type="text" class="border-0 form-control"></td>
-                                    <td><input name="nlaxis" type="text" class="border-0 form-control"></td>
-                                    <td><input name="nlva" type="text" class="border-0 form-control"></td>
-                                </tr>
-                                
-                                <tr>
-                                    <td colspan="9">
-                                        <div class="form-group">
-                                            <label for="purpose" class="form-label fw-bold"> Purpose </label>
-                                            <input type="text" name="purpose" id="purpose" class="form-control border-top-0" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="quality" class="form-label fw-bold"> Quality </label>
-                                            <input type="text" id="quality" name="quality" class="form-control border-top-0" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="remark" class="form-label fw-bold"> Remark </label>
-                                            <input type="text" id="remark" name="remark" class="form-control border-top-0" />
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <!-- multiple order form ================================= start -->
-                        <div class="mb-3">
-                            <label for="frame_name" class="form-label"> Frame Name </label>
-                            <input type="text" id="f1name" name="f1name" placeholder="Enter Frame Name..." class="form-control">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="glass_name" class="form-label"> Glass Name </label>
-                            <input type="text" id="g1name" name="g1name" placeholder="Enter Glass Name..." class="form-control">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="frame_price" class="form-label"> Frame Price </label>
-                            <input type="text" id="f1prise" name="f1prise" placeholder="Enter Frame Price..." class="form-control">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="glass_price" class="form-label"> Glass Price </label>
-                            <input type="text" id="g1prise" name="g1prise" placeholder="Enter Glass Price..." class="form-control">
-                        </div>
-
-                        <!-- Multiple order form start -->
-
-                        <table class="table table-bordered table-sm rounded align-middle" style="border-color: lightgray;">
-                            <!-- Enable Decible Checkbox -->
-                            <tr>
-                                <th colspan="9" scope="col">
-                                    <div class="mb-2 mt-2 ms-4 form-check">
-                                        <input type="checkbox" class="form-check-input fs-6" id="enableForm">
-                                        <label class="form-check-label fs-6" for="enableForm">Enable For Multiple Order</label>
-                                    </div>
-                                </th>
-                            </tr>
-
-                            <tr>
-                                <th style="text-align:center;" colspan="9" scope="col">Multiple Order</th>
-                            </tr>
-
-                            <tr>
-                                <th style="text-align:center ;" colspan="5" scope="col">Frames </th>
-                                <th style="text-align:center ;" colspan="4" scope="col">Glasses </th>
-                            </tr>
-
-                            <tr>
-                                <th colspan="5">
-                                    <div class="mb-3">
-                                        <label for="frame_name" class="form-label"> Frame-2 Name </label>
-                                        <input type="text" name="f2name" id="f2name" placeholder="Enter Frame Name..." class="form-control">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="glass_name" class="form-label"> Glass-2 Name </label>
-                                        <input type="text" id="g2name" name="g2name" placeholder="Enter Glass Name..." class="form-control">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="frame_name" class="form-label"> Frame-3 Name </label>
-                                        <input type="text" name="f3name" id="f3name" placeholder="Enter Frame Name..." class="form-control">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="glass_name" class="form-label"> Glass-3 Name </label>
-                                        <input type="text" id="g3name" name="g3name" placeholder="Enter Glass Name..." class="form-control">
-                                    </div>
-
-                                </th>
-
-                                <th colspan="5">
-                                    <div class="mb-3">
-                                        <label for="frame_name" class="form-label"> Frame-2 Price </label>
-                                        <input type="text" name="f2prise" id="f2prise" placeholder="Enter Frame Price..." class="form-control">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="glass_name" class="form-label"> Glass-2 Price </label>
-                                        <input type="text" id="g2prise" name="g2prise" placeholder="Enter Glass Price..." class="form-control">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="frame_name" class="form-label"> Frame-3 Price </label>
-                                        <input type="text" name="f3prise" id="f3prise" placeholder="Enter Frame Price..." class="form-control">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="glass_name" class="form-label"> Glass-3 Price </label>
-                                        <input type="text" id="g3prise" name="g3prise" placeholder="Enter Glass Price..." class="form-control">
-                                    </div>
-                                </th>
-                                </th>
-
-
-                            </tr>
-                        </table>
-                        <!-- Multiple order form End -->
-
-                        <div class="mb-3">
-                            <label for="gst" class="form-label"> GST </label>
-                            <input type="text" id="gst" name="gst" placeholder="Enter GST" class="form-control" disabled>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="total" class="form-label"> Total </label>
-                            <input type="text" id="total" name="total" placeholder="Total is..." class="form-control">
-                        </div>
-
                         <div class="input-group mb-3 mt-5">
                             <input type="submit" value="Add" class="btn btn-primary rounded-pill form-control mx-4">
                             <input type="reset" value="Clear" class="btn btn-danger rounded-pill form-control mx-4">
                         </div>
 
                     </form>
+
                 </div>
             </div>
         </div>
