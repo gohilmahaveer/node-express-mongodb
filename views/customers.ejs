@@ -19,6 +19,10 @@
 
     <!-- Custom CSS -->
     <link href="/stylesheets/custom.css" rel="stylesheet" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.css">
+
 </head>
 
 <body id="page-top" class="bg-light">
@@ -65,7 +69,7 @@
 
                     <div class="customers" id="customers">
                        
-                        <div class="row row-cols-lg-3 text-center fw-bold fs-3">
+                        <div class="row row-cols-lg-4 text-center fw-bold fs-3">
                             <div class="col">
                                 Customer
                             </div>
@@ -75,13 +79,16 @@
                             <div class="col">
                                 Mobile
                             </div>
+                            <div class="col">
+                                Delete
+                            </div>
                         </div>
 
                             <hr>
 
                         <% if(data.length) { for(var i=0; i < data.length; i++) { %>
 
-                            <div class="row row-cols-lg-3 text-center text-muted">
+                            <div class="row row-cols-lg-4 text-center text-muted">
                                 <div class="col">
                                     <%= data[i].name %>
                                 </div>
@@ -90,6 +97,11 @@
                                 </div>
                                 <div class="col">
                                     <%= data[i].mobile %>
+                                </div>
+                                <div class="col">
+                                    <a href="/delete/<%= data[i]._id %>">
+                                        <i class="bi bi-trash text-danger fs-4"> </i>
+                                    </a>
                                 </div>
                             </div>
 

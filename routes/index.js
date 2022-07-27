@@ -88,4 +88,17 @@ router.get('/logout', function (req, res, next) {
   res.redirect("/");
 });
 
+router.get('/delete/(:id)', async (req, res, next) => {
+  
+  try {
+    const id = req.params.id;
+      const data = await Model.findByIdAndDelete(id);
+      res.redirect('/customers');
+  }
+
+  catch (error) {
+    res.send("Something went wrong");
+  }
+});
+
 module.exports = router;
