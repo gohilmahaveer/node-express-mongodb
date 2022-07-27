@@ -72,6 +72,17 @@ html {
     align-items: center;
 }
 
+.btn-outline-light {
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+  }
+  
+  .btn-outline-light:hover {
+    color: #000;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+  }
+
 #mainNav {
     padding-top: 1rem;
     padding-bottom: 1rem;
