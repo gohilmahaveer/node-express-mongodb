@@ -22,7 +22,7 @@ window.onload = (event) => {
     
     setTimeout(() => {
         document.getElementById('preloader').style.display = 'none';    
-    }, 500);;
+    }, 800);;
     
   };
 
