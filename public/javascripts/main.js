@@ -18,13 +18,13 @@ function showPassword() {
     }
 }
 
-$('#printInvoice').click(function () {
-    Popup($('.invoice')[0].outerHTML);
-    function Popup(data) {
-        window.print();
-        return true;
-    }
-});
+window.onload = (event) => {
+    
+    setTimeout(() => {
+        document.getElementById('preloader').style.display = 'none';    
+    }, 1000);;
+    
+  };
 
 window.addEventListener('DOMContentLoaded', event => {
 
