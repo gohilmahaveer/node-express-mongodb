@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> <%= title %> </title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+    <!-- Font Awesome icons (free version) -->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- MDBootstrap CSS -->
+    <link href="/stylesheets/mdb.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="/stylesheets/custom.css" rel="stylesheet" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.css">
+
+</head>
+
+<body id="page-top" class="bg-light">
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container-fluid ms-5">
+            <a class="navbar-brand text-uppercase" href="/home">Vision Optical</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fas fa-bars"></i> </button>
+            <div class="collapse navbar-collapse me-5" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/customers">Customers</a>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/add">Add Customer</a> </li>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/logout">Logout</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Portfolio Section -->
+    <section class="page-section portfolio mb-0" id="customers">
+        <div class="container-xl pt-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6">
+                    <div class="card shadow bg-white border border-dark rounded">
+                        <div class="card-header border-dark"> Update Profile </div>
+                        <div class="card-body">
+                            <form name="updateForm" method="post" action="/updateprocess/<%= data._id %>">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control form-control-lg border-dark bg-white mb-3" name="name" value="<%= data.name %>" />
+        
+                                <label for="city" class="form-label">City</label>
+                                <input type="text" class="form-control form-control-lg border-dark bg-white mb-3" name="city" value="<%= data.city %>" />
+                            
+                                <label for="mobile" class="form-label">Mobile No</label>
+                                <input type="text" class="form-control form-control-lg border-dark bg-white mb-4" name="mobile" value="<%= data.mobile %>" />
+                            
+                                <input type="submit" value="Update" class="form-control btn btn-primary btn-sm text-center fs-6 mt-2 mb-2">
+                                
+                                <a href="/profile/<%= data._id %>" class="form-control btn btn-success btn-sm text-center fs-6 mt-2 mb-2"> 
+                                    Back 
+                                </a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <p class="lead mb-0">
+                        Vision Optical, Moti Bag,
+                        <br />
+                        Junagadh.
+                    </p>
+                </div>
+
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Around the Web</h4>
+                    <a class="btn btn-outline-light btn-social mx-1"><i class="fab fa-fw fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1"><i class="fab fa-fw fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1"><i class="fab fa-fw fa-dribbble"></i></a>
+                </div>
+
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4">About US</h4>
+                    <p class="lead mb-0">MG Technology Solution</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright Section -->
+    <div class="copyright py-4 text-center text-white">
+        <div class="container">
+            <small>Copyright &copy; MG Technology Solution 2022</small>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JS -->
+    <script src="/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- MDBootstrap core JS -->
+    <script src="/javascripts/mdb.min.js"></script>
+
+    <!-- Core theme JS -->
+    <script src="/javascripts/main.js"></script>
+    
+</body>
+
+</html>
