@@ -101,4 +101,45 @@ router.get('/delete/(:id)', async (req, res, next) => {
   }
 });
 
+router.get('/profile/(:id)', async (req, res, next) => {
+  
+  try {
+      const id = req.params.id;
+      const data = await Model.findById(id);
+      res.render('profile', { data : data, title : 'Profile'});
+  }
+
+  catch (error) {
+    res.send("Something went wrong");
+  }
+});
+
+router.get('/update/(:id)', async (req, res, next) => {
+  
+  try {
+    const id = req.params.id;
+    const data = await Model.findById(id);
+    res.render('edit', { data : data, title : 'Update Profile'});
+  }
+
+  catch (error) {
+  res.send("Something went wrong");
+  }
+}); 
+
+router.post('/updateprocess/(:id)', async (req, res, next) => {
+  
+  try {
+    const id = req.params.id;
+    const updatedData = req.body;
+    const options = { new: true };
+    const data = await Model.findByIdAndUpdate(id, updatedData, options);
+    res.redirect(`/profile/${id}`);
+  }
+
+  catch (error) {
+  res.send("Something went wrong");
+  }
+});
+
 module.exports = router;

@@ -90,7 +90,7 @@
 
                             <div class="row row-cols-lg-4 text-center text-muted">
                                 <div class="col">
-                                    <%= data[i].name %>
+                                    <a href="/profile/<%= data[i]._id %>" class="text-muted"><%= data[i].name %></a>
                                 </div>
                                 <div class="col">
                                     <%= data[i].city %>
@@ -100,7 +100,7 @@
                                 </div>
                                 <div class="col">
                                     <a href="/delete/<%= data[i]._id %>">
-                                        <i class="bi bi-trash text-danger fs-4"> </i>
+                                        <i class="fa-regular fa-trash-can text-danger fs-4"> </i>
                                     </a>
                                 </div>
                             </div>

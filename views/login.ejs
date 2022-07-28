@@ -42,75 +42,40 @@
     <!-- Portfolio Section -->
     <section class="page-section portfolio" id="contact">
       <div class="container">
+        
         <!-- Contact Section Heading-->
-        <h1
-          class="masthead-heading text-uppercase text-center text-secondary pt-5"
-        >
-          Login
+        <h1 class="masthead-heading text-uppercase text-center text-secondary pt-5">
+          <div class="mb-5">
+            <img src="/images/avatar2.png" alt="avatar" class="img-fluid rounded-circle" style="width: 10rem;" />
+          </div>
         </h1>
-        <!-- Icon Divider-->
-        <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-          <div class="divider-custom-line"></div>
-        </div>
 
         <!-- Login Section Form-->
         <div class="row justify-content-center">
           <div class="col-lg-8 col-xl-7">
             <form name="login" id="form" method="post" action="home">
-              <!-- Alert Button -->
-              <div
-                class="alert alert-success alert-dismissible fade show text-center"
-                role="alert"
-              >
-                Please Login
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="alert"
-                  aria-label="Close"
-                ></button>
-              </div>
 
               <!-- Userame input-->
               <div class="form-outline mb-4">
-                <input
-                  type="text"
-                  name="username"
-                  id="username"
-                  class="form-control"
-                  required
-                />
+                <input type="text" class="form-control form-control-lg" name="username" id="username" required />
                 <label for="username" class="form-label">Username</label>
               </div>
 
               <!-- Password input-->
               <div class="form-outline mb-4">
-                <input
-                  class="form-control"
-                  name="password"
-                  id="password"
-                  type="password"
-                  required
-                />
+                <input type="password" class="form-control form-control-lg" name="password" id="password" required />
                 <label for="password" class="form-label">Password</label>
               </div>
 
               <!-- Show Password Checkbox -->
               <div class="mb-4 mt-2 form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input fs-6"
-                  id="showPass"
-                  onclick="showPassword()"
-                />
-                <label class="form-check-label fs-6" for="showPass"
-                  >Show Password</label
-                >
+                <input type="checkbox" class="form-check-input fs-6" id="showPass" onclick="showPassword()" />
+                <label class="form-check-label fs-6" for="showPass"> Show Password </label>
               </div>
+
               <!-- Submit Button-->
               <input type="submit" value="Submit" class="btn btn-primary" />
+            
             </form>
           </div>
         </div>
