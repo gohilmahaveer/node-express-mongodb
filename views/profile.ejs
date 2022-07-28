@@ -25,7 +25,7 @@
 
 </head>
 
-<body id="page-top" class="bg-light">
+<body id="page-top" class="bg-light d-flex flex-column h-100">
 
     <!-- Preloader -->
     <div id="preloader"></div>
@@ -64,16 +64,13 @@
                             <input type="text" class="form-control form-control-lg border-success bg-white mb-3" name="city" value="<%= data.city %>" disabled />
                             
                             <label for="mobile" class="form-label">Mobile No</label>
-                            <input type="text" class="form-control form-control-lg border-primary bg-white mb-4" name="mobile" value="<%= data.mobile %>" disabled />
+                            <input type="text" class="form-control form-control-lg border-primary bg-white mb-3" name="mobile" value="<%= data.mobile %>" disabled />
 
-                            <a href="/update/<%= data._id %>" class="form-control btn btn-primary btn-sm text-center fs-6 mt-2 mb-4"> 
-                                Edit 
-                            </a>
+                            <div class="input-group text-center fs-6 mt-5 mb-3">
+                                <a class="btn btn-primary form-control border rounded-5 mx-3" href="/update/<%= data._id %>"> Edit </a>
+                                <a class="btn btn-success form-control border rounded-5 mx-3" href="/customers"> Back </a>
+                            </div>
 
-                            <a href="/customers" class="form-control btn btn-success btn-sm text-center fs-6 mt-2 mb-2"> 
-                                Back 
-                            </a>
-                            
                         </div>
                     </div>
                 </div>
@@ -82,7 +79,7 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class="footer text-center">
+    <footer class="footer text-center mt-auto">
         <div class="container">
             <div class="row">
                 <!-- Footer Location-->
@@ -115,11 +112,11 @@
     </footer>
 
     <!-- Copyright Section -->
-    <div class="copyright py-4 text-center text-white">
+    <footer class="copyright footer mt-0 py-4 text-center">
         <div class="container">
-            <small>Copyright &copy; MG Technology Solution 2022</small>
+          <span>Copyright &copy; MG Technology Solution 2022</span>
         </div>
-    </div>
+    </footer>
 
     <!-- Bootstrap core JS -->
     <script src="/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
