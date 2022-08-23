@@ -164,7 +164,11 @@ router.post( '/updateprocess/(:id)', async ( req, res, next ) =>
   try
   {
     const id = req.params.id;
-    const updatedData = req.body.trim();
+    const updatedData = {
+      name: req.body.name.trim(),
+      city: req.body.city.trim(),
+      mobile: req.body.mobile.trim()
+    }
     const options = { new: true };
     const data = await Model.findByIdAndUpdate( id, updatedData, options );
     res.redirect( `/profile/${ id }` );
